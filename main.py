@@ -12,7 +12,7 @@ def wit_runsync():
     run_request = endpoint.run_sync(
         {"input":
             {
-                "text": f"Hello, My name is Saurav Gupta. I have just deployed a text2speech model on runpod with run",
+                "text": f"Hello, My name is Saurav Gupta. I have just deployed a text2speech model on runpod with runsync",
                 "embedding_path": "/runpod-volume/embeddings",
                 "voice_preset": "test4"}}
     )
@@ -28,8 +28,8 @@ def with_run():
         {"input":
             {
                 "text": "Hello, My name is Saurav Gupta. I have just deployed a text2speech model on runpod with run",
-                "embedding_path": "/runpod-volume/embeddings",
-                "voice_preset": "test4"}}
+                "embedding_path": None
+               }}
         )
     # Check the status of the endpoint run request
     print(run_request.job_id)
@@ -56,12 +56,12 @@ def generate_embeddding(wav_file_path):
             {"input":
                  {
                 "audio_file": base64_encoded,
-                 "speaker_name": "test4"}
+                 "speaker_name": "test1"}
              }
         )
 
         print(run_request)
 
 if __name__ == "__main__":
-    generate_embeddding("1708204430_tbcvfe.wav")
+    # generate_embeddding("1708273081_ghottu.wav")
     with_run()
